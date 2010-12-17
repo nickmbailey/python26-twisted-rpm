@@ -14,7 +14,6 @@ cp -r $ORIG_NAME $NAME/
 #apply any patches
 for patch_file in patches/*
 do
-    echo $patch_file
     patch -p1 -d $NAME < $patch_file
 done
 
