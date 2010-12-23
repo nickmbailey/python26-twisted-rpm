@@ -8,6 +8,9 @@ ORIG_NAME="Twisted-10.2.0"
 NAME="python26-twisted"
 RELEASE=1
 PACKAGER="Nick Bailey - nick@riptano.com"
+DOC_FILES="doc/, INSTALL, README, NEWS, LICENSE"
+REQUIRES=""
+BUILD_REQUIRES=""
 
 # copy to a directory for building
 cp -r $ORIG_NAME $NAME/
@@ -23,7 +26,8 @@ python2.6 setup.py bdist_rpm \
         --python="python2.6" \
         --dist-dir="$CUR_DIR" \
         --release="$RELEASE" \
-        --packager="$PACKAGER" 
+        --packager="$PACKAGER" \
+        --doc-files="$DOC_FILES"
 cd ..
 
 rm -r "$CUR_DIR/$NAME"

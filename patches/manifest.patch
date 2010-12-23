@@ -1,0 +1,7 @@
+--- a/MANIFEST.in	1970-01-01 00:00:00.000000000 +0000
++++ b/MANIFEST.in	2010-12-23 22:39:52.000000000 +0000
+@@ -0,0 +1,4 @@
++recursive-include doc *
++include INSTALL
++include NEWS
++include LICENSE
