@@ -9,7 +9,9 @@ NAME="python26-twisted"
 RELEASE=1
 PACKAGER="Nick Bailey - nick@riptano.com"
 DOC_FILES="doc/, INSTALL, README, NEWS, LICENSE"
-REQUIRES=""
+# Specify this because twisted doc files have a python2.2
+# reference so we don't want autoreq
+REQUIRES="/usr/bin/env, /usr/bin/python2.6"
 BUILD_REQUIRES=""
 
 # copy to a directory for building
@@ -27,7 +29,9 @@ python2.6 setup.py bdist_rpm \
         --dist-dir="$CUR_DIR" \
         --release="$RELEASE" \
         --packager="$PACKAGER" \
-        --doc-files="$DOC_FILES"
+        --doc-files="$DOC_FILES" \
+        --requires="$REQUIRES" \
+        --no-autoreq
 cd ..
 
 rm -r "$CUR_DIR/$NAME"
